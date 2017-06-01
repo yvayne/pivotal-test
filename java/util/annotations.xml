@@ -1,0 +1,5 @@
+<root>
+    <item name='java.util.Properties java.util.Set&lt;java.lang.String&gt; stringPropertyNames()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
