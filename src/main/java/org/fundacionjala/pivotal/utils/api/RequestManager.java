@@ -71,6 +71,7 @@ public final class RequestManager {
      * @return a PUT response.
      */
     public static Response put(final String endpoint, final String body) {
+
         return given()
                 .spec(requestSpecification)
                 .header("Content-type", ContentType.JSON)
@@ -103,4 +104,7 @@ public final class RequestManager {
                 .spec(requestSpecification)
                 .delete(endpoint);
     }
+
+
+
 }
