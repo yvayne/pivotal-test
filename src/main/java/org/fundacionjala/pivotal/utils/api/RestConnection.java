@@ -8,14 +8,6 @@ import org.fundacionjala.pivotal.utils.Environment;
  * Created by Administrator on 5/25/2017.
  */
 public final class RestConnection {
-    private static int proxyPort = Integer.parseInt(Environment.getInstance()
-            .getPropertyValue("testerAt03.proxyPort"));
-    private static String proxyIp = Environment.getInstance()
-            .getPropertyValue("testerAt03.proxyIp");
-    private static String apiToken = Environment.getInstance()
-            .getPropertyValue("testerAt03.apiToken");
-    private static String baseURI = Environment.getInstance()
-            .getPropertyValue("testerAt03.baseURI");
     private static RestConnection instance;
     private RequestSpecification requestSpecification;
 
@@ -25,9 +17,15 @@ public final class RestConnection {
      */
     private RestConnection() {
         requestSpecification = new RequestSpecBuilder()
-                .setProxy(proxyIp, proxyPort)
-                .addHeader("X-TrackerToken", apiToken)
-                .setBaseUri(baseURI)
+                .setProxy(Environment.getInstance()
+                                .getPropertyValue("testerAt03.proxyIp"),
+                        Integer.parseInt(Environment.getInstance()
+                                .getPropertyValue("testerAt03.proxyPort")))
+                .addHeader("X-TrackerToken",
+                        Environment.getInstance()
+                                .getPropertyValue("testerAt03.apiToken"))
+                .setBaseUri(Environment.getInstance()
+                        .getPropertyValue("testerAt03.baseURI"))
                 .build();
     }
 
