@@ -7,6 +7,7 @@ Feature: Project
 
   Scenario: Post Create Project
     When I request GET "/projects/[projectid]"
+    Then I expect status code 200
     Then I request DELETE "/projects/[projectid]"
 
   Scenario: List projects using Get

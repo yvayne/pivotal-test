@@ -37,13 +37,14 @@ public class Steps {
         System.out.println(response.prettyPrint());
     }
 
-
     /**
      * To get project object by name.
+     * @param endpoint The endpoint
      * @param name The name to search
      * @return Map<String, ?></>
      */
-    public Map<String, ?> getProjectObjectByName(final String name) {
+    public Map<String, ?> getObjectByName(final String endpoint, final String name) {
+        requestGet(endpoint);
         ArrayList<Map<String, ?>> jsonArr = from(response.asString()).get("");
         for (Map<String, ?> obj : jsonArr) {
             if (obj.get("name").toString().equals(name)) {
@@ -59,21 +60,6 @@ public class Steps {
     @And("^I stored project$")
     public void storageProject() {
         project = from(response.asString()).get("");
-    }
-
-    /**
-     * To verify if a project exists. This method needs to be improved.
-     * @return boolean
-     */
-    @Then("^I verify the project exists$")
-    public boolean verifyProjectExists() {
-        ArrayList<Map<String, ?>> jsonArr = from(response.asString()).get("");
-        for (Map<String, ?> obj : jsonArr) {
-            if (obj.get("name").toString().equals(project.get("name"))) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**
