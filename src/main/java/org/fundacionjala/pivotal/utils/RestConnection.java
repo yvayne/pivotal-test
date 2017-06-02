@@ -1,8 +1,7 @@
-package org.fundacionjala.pivotal.utils.api;
+package org.fundacionjala.pivotal.utils;
 
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.specification.RequestSpecification;
-import org.fundacionjala.pivotal.utils.Environment;
 
 /**
  * Created by Administrator on 5/25/2017.
