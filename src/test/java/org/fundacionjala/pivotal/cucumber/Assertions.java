@@ -1,4 +1,4 @@
-package org.fundacionjala.pivotal.cucumber.assertions;
+package org.fundacionjala.pivotal.cucumber;
 
 import org.junit.Assert;
 
