@@ -10,7 +10,7 @@ Feature: Workspace
     Then I expect status code 200
     Then I request DELETE "/my/workspaces/[projectid]"
 
-  Scenario: Delete Project
+  Scenario: Delete a Project
     Then I request DELETE "/my/workspaces/[projectid]"
     Then I expect status code 204
 

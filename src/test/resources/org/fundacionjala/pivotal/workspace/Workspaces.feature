@@ -5,7 +5,7 @@ Feature: Workspaces
       | name | workspacesds |
     And I stored project
 
-  Scenario: Post Create workspace
+  Scenario: Post Create a workspace
     When I request GET "/my/workspaces/[projectid]"
     Then I request DELETE "/my/workspaces/[projectid]"
 
