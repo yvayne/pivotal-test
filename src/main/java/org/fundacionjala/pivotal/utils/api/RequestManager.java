@@ -1,4 +1,4 @@
-package org.fundacionjala.pivotal.utils;
+package org.fundacionjala.pivotal.utils.api;
 
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
