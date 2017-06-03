@@ -32,7 +32,7 @@ public class Steps {
     /**
      * Commented.
      */
-    @Then("New worksapce should be successful")
+    @Then("The task should be successful")
     public void newWorkspaceShouldSuccessful() {
         System.out.println(response.prettyPrint());
     }
@@ -59,6 +59,14 @@ public class Steps {
      */
     @And("^I stored project$")
     public void storageProject() {
+        project = from(response.asString()).get("");
+    }
+
+    /**
+     * Store storie.
+     */
+    @And("^I stored storie$")
+    public void storageStorie() {
         project = from(response.asString()).get("");
     }
 
